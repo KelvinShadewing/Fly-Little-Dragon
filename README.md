@@ -21,3 +21,16 @@ Bonus points are earned by feeding birds to the pred. In multiplayer, the player
 ## **Join the Feast!**
 
 Commissions will be opened to allow players to buy sprites and have them added to the game. While the game is open-source and can have any sprite added at any time, buying a sprite will ensure it matches the style of the game and will allow your character to be seen by everyone who plays. If you do not want to be in the game but would still like to support development, you can donate on my **[Patreon](http://www.patreon.com/kelvin)** or my **[Ko-Fi](http://www.ko-fi.com/kelvinshadewing)**.
+
+## **Character Credits**
+
+* Hida - [Hidasan](http://www.furaffinity.net/user/hida)
+* Pascal - [LPPassy](https://www.youtube.com/channel/UCuCn7enxS4gYIfnuCR9T5kQ)
+* Comito - [Comito](http://www.furaffinity.net/user/comito)
+
+## **Change Log**
+
+* *1.0.1*
+  * Added parallax background
+  * Added sounds
+  * Added Hida and Passy sprites
