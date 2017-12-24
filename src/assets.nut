@@ -12,7 +12,19 @@
 ::sndGulp <- loadSound("res/sndGulp.wav");
 
 //Sprites
-//Characters are reloaded separately when switched
+//newSprite( file, width, height, margin, padding, pivotX, pivotY, frames );
+::sprPrey <- {
+	"Hida" : [
+		["res/HidaFly.png", 63, 31, 1, 1, 32, 16, 0],
+		["res/HidaLose.png", 38, 44, 1, 1, 19, 44, 0]
+	],
+	"Passy" : [
+		["res/PassyFly.png", 63, 31, 1, 1, 32, 16, 0],
+		["res/PassyLose.png", 38, 44, 1, 1, 19, 44, 0]
+	]
+};
+
+//Predators are reloaded separately when switched
 ::sprPredHead <- {};
 ::sprPredBody <- {};
 ::sprPredWing <- {};
