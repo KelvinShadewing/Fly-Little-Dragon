@@ -13,9 +13,9 @@
 
 //Sprites
 //Characters are reloaded separately when switched
-::sprPredHead;
-::sprPredBody;
-::sprPredWing;
+::sprPredHead <- {};
+::sprPredBody <- {};
+::sprPredWing <- {};
 
 //Background
 ::bg0 <- newSprite("res/background0.png", 160, 240, 0, 0, 0, 0, 0);

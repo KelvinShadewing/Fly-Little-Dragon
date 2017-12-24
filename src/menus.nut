@@ -2,9 +2,9 @@
 // MENUS //
 ///////////
 
-::menu = [];
-::cursor = 0;
-::textMenu <- (){
+::menu <- [];
+::cursor <- 0;
+::textMenu <- function(){
 	//Draw options
 	for(local i = 0; i < menu.len(); i++){
 		//if(cursor == i) drawText(200, 238 - (menu.len() * 9) + (i * 9), "=> " + menu[i][0] + " <=", font, 0xF8F8F8, ha_center, va_bottom);
@@ -22,12 +22,12 @@
 		if(cursor < 0) cursor = menu.len() - 1;
 	};
 
-	if(keyPress(k_space) || keyPress(k_enter)){
+	if(keyPress(k_space) || keyPress(k_return)){
 		menu[cursor][1]();
 	};
 };
 
-::meMain = [
+::meMain <- [
 	["Singleplayer", function(){ gvPlayers = 1; gm = gmPlay; }],
 	["Multiplayer", function(){ gvPlayers = 2; gm = gmPlay; }],
 	["Options", function(){ gvPlayers = 1; gm = gmPlay(); }],
