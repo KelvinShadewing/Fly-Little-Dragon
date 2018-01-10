@@ -35,20 +35,20 @@
 
 		//Screen limits
 		if(x > 288){
-				x = 288;
-				xspd--;
+			x = 288;
+			xspd--;
 		};
 		if(x < 32){
-				x = 32;
-				xspd++;
+			x = 32;
+			xspd++;
 		};
 		if(y < 16){
-						y = 16;
-						yspd++;
+			y = 16;
+			yspd++;
 		};
 		if(y > 224){
-						y = 224;
-						yspd--;
+			y = 224;
+			yspd--;
 		};
 	};
 };
