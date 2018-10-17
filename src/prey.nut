@@ -51,4 +51,6 @@
 			yspd--;
 		};
 	};
+
+  _typeof(){ return "Prey"; };
 };

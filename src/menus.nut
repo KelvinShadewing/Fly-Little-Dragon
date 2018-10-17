@@ -7,8 +7,8 @@
 ::textMenu <- function(){
 	//Draw options
 	for(local i = 0; i < menu.len(); i++){
-		//if(cursor == i) drawText(200, 238 - (menu.len() * 9) + (i * 9), "=> " + menu[i][0] + " <=", font, 0xF8F8F8, ha_center, va_bottom);
-		//else drawText(200, 238 - (menu.len() * 9) + (i * 9), menu[i][0], font, 0xF8F8F8, ha_center, va_bottom);
+		//if(cursor == i) drawText(font, 200, 238 - (menu.len() * 9) + (i * 9), "=> " + menu[i][0] + " <=");
+		//else drawText(font, 200, 238 - (menu.len() * 9) + (i * 9), menu[i][0]);
 	};
 
 	//Keyboard input
