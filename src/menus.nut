@@ -39,7 +39,9 @@
 ];
 
 ::meOptions <- [
-  ["Difficulty: " + strDifficulty[config.difficulty], function(){ menu = meDifficulty; }]
+  ["Difficulty: " + strDifficulty[config.difficulty], function(){ menu = meDifficulty; }],
+  ["Prey 1: " + gvPrey0, function(){} ],
+  ["Prey 1: " + gvPrey1, function(){} ]
 ];
 
 ::meDifficulty <- [
