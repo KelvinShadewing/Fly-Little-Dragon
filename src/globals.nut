@@ -23,6 +23,18 @@
 ::config <- {
   safe = 0,
   difficulty = 0,
+  con0 = {
+    up = k_up,
+    down = k_down,
+    left = k_left,
+    right = k_right
+  },
+  con1 = {
+    up = k_w,
+    down = k_s,
+    left = k_a,
+    right = k_d
+  }
 };
 
 ::strDifficulty <- ["Easy", "Normal", "Difficult"];
