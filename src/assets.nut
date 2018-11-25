@@ -13,6 +13,10 @@
 
 //Sprites
 //newSprite( file, width, height, margin, padding, pivotX, pivotY, frames );
+
+::sprFont <- newSprite("res/sprFont.png", 12, 14, 0, 0, 0, 0, 0);
+::font <- newFont(sprFont, 33, 0, 0);
+
 ::sprPrey <- {
 	"Hida" : [
 		["res/HidaFly.png", 63, 31, 1, 1, 32, 16, 0],
