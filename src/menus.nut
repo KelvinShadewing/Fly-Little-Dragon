@@ -10,8 +10,8 @@
 
 	//Draw options
 	for(local i = 0; i < menu.len(); i++){
-		if(cursor == i) drawText(font, 200 - ((menu[i].name.len() + 6) * 6), 238 - (menu.len() * 14) + (i * 14), "=> " + menu[i].name + " <=");
-		else drawText(font, 200 -(menu[i].name.len() * 6), 238 - (menu.len() * 14) + (i * 14), menu[i].name);
+		if(cursor == i) drawText(font, 200 - ((menu[i].name().len() + 4) * 6), 238 - (menu.len() * 14) + (i * 14), "=>" + menu[i].name() + "<=");
+		else drawText(font, 200 -(menu[i].name().len() * 6), 238 - (menu.len() * 14) + (i * 14), menu[i].name());
 	};
 
 	//Keyboard input
@@ -38,37 +38,61 @@
 	["Quit", function(){ gvQuit = 1; }]
 ];*/
 
+//Names are stored as functions because some need to change each time
+//they're brought up again.
 ::meMain <- [
 	{
-		name = "Singleplayer",
+		name = function(){ return "Singleplayer"; },
 		func = function(){ gvPlayers = 1; gvDual = 0; gm = gmPlay; }
 	},
 	{
-		name = "Multiplayer",
+		name = function(){ return "Multiplayer"; },
 		func = function(){ gvPlayers = 2; gvDual = 0; gm = gmPlay; }
 	},
 	{
-		name = "Dual Stick",
+		name = function(){ return "Dual Stick"; },
 		func = function(){ gvPlayers = 2, gvDual = 1; gm = gmPlay; }
 	},
 	{
-		name = "Options",
+		name = function(){ return "Options"; },
 		func = function(){ cursor = 0; menu = meOptions; }
 	},
 	{
-		name = "Quit",
+		name = function(){ return "Quit"; },
 		func = function(){ gvQuit = 1; }
 	}
 ];
 
 ::meOptions <- [
-  ["Difficulty: " + strDifficulty[config.difficulty], function(){ menu = meDifficulty; }],
-  ["Prey 1: " + gvPrey0, function(){} ],
-  ["Prey 1: " + gvPrey1, function(){} ]
+  {
+		name = function(){ return "Difficulty: " + strDifficulty[config.difficulty]; },
+		func = function(){ cursor = 0; menu = meDifficulty; }
+	},
+  {
+		name = function(){ return "Prey 1: " + gvPrey0; },
+		func = function(){}
+	},
+  {
+		name = function(){ return "Prey 2: " + gvPrey1; },
+		func = function(){}
+	},
+	{
+		name = function(){ return "Back"; },
+		func = function(){ cursor = 0; menu = meMain; }
+	}
 ];
 
 ::meDifficulty <- [
-  ["Easy", function(){ config.difficulty = 0; cursor = 0; menu = meOptions; }],
-  ["Normal", function(){ config.difficulttty = 1; cursor = 0;     menu = meOptions; }],
-  ["Hard", function(){ config.difficulty = 2; cursor = 0; menu = meOptions; }]
+  {
+		name = function(){ return "Easy"; },
+		func = function(){ config.difficulty = 0; cursor = 0; menu = meOptions; }
+	},
+  {
+		name = function(){ return "Normal"; },
+		func = function(){ config.difficulty = 1; cursor = 0; menu = meOptions; }
+	},
+  {
+		name = function(){ return "Hard"; },
+		func = function(){ config.difficulty = 2; cursor = 0; menu = meOptions; }
+	}
 ];
