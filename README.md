@@ -20,7 +20,7 @@ Bonus points are earned by feeding birds to the pred. In multiplayer, the player
 
 ## **Join the Feast!**
 
-Commissions will be opened to allow players to buy sprites and have them added to the game. While the game is open-source and can have any sprite added at any time, buying a sprite will ensure it matches the style of the game and will allow your character to be seen by everyone who plays. If you do not want to be in the game but would still like to support development, you can donate on my **[Patreon](http://www.patreon.com/kelvin)** or my **[Ko-Fi](http://www.ko-fi.com/kelvinshadewing)**.
+Commissions will be opened to allow players to buy sprites and have them added to the game. While the game is open-source and can have any sprite added at any time, buying a sprite will ensure it matches the style of the game and will allow your character to be seen by everyone who plays. If you do not want to be in the game but would still like to support development, you can donate on my **[LIberapay](http://www.liberapay.com/kelvinshadewing)** or my **[Ko-Fi](http://www.ko-fi.com/kelvinshadewing)**.
 
 ## **Character Credits**
 

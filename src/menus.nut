@@ -10,8 +10,8 @@
 
 	//Draw options
 	for(local i = 0; i < menu.len(); i++){
-		if(cursor == i) drawText(font, 200 - (menu[i][0].len() * 4), 238 - (menu.len() * 9) + (i * 9), "=> " + menu[i][0] + " <=");
-		else drawText(font, 200 -(menu[i][0] * 4), 238 - (menu.len() * 9) + (i * 9), menu[i][0]);
+		if(cursor == i) drawText(font, 200 - ((menu[i].name.len() + 6) * 6), 238 - (menu.len() * 14) + (i * 14), "=> " + menu[i].name + " <=");
+		else drawText(font, 200 -(menu[i].name.len() * 6), 238 - (menu.len() * 14) + (i * 14), menu[i].name);
 	};
 
 	//Keyboard input
@@ -26,16 +26,39 @@
 	};
 
 	if(keyPress(k_space) || keyPress(k_return)){
-		menu[cursor][1]();
+		menu[cursor].func();
 	};
 };
 
-::meMain <- [
+/*::meMain <- [
 	["Singleplayer", function(){ gvPlayers = 1; gvDual = 0; gm = gmPlay; }],
 	["Multiplayer", function(){ gvPlayers = 2; gvDual = 0; gm = gmPlay; }],
   ["Dual Stick", function(){ gvPlayers = 2, gvDual = 1; gm = gmPlay; }],
 	["Options", function(){ cursor = 0; menu = meOptions; }],
 	["Quit", function(){ gvQuit = 1; }]
+];*/
+
+::meMain <- [
+	{
+		name = "Singleplayer",
+		func = function(){ gvPlayers = 1; gvDual = 0; gm = gmPlay; }
+	},
+	{
+		name = "Multiplayer",
+		func = function(){ gvPlayers = 2; gvDual = 0; gm = gmPlay; }
+	},
+	{
+		name = "Dual Stick",
+		func = function(){ gvPlayers = 2, gvDual = 1; gm = gmPlay; }
+	},
+	{
+		name = "Options",
+		func = function(){ cursor = 0; menu = meOptions; }
+	},
+	{
+		name = "Quit",
+		func = function(){ gvQuit = 1; }
+	}
 ];
 
 ::meOptions <- [
@@ -47,5 +70,5 @@
 ::meDifficulty <- [
   ["Easy", function(){ config.difficulty = 0; cursor = 0; menu = meOptions; }],
   ["Normal", function(){ config.difficulttty = 1; cursor = 0;     menu = meOptions; }],
-  ["Hard", function(){ config.difficulty = 2 cursor = 0; menu = meOptions; }]
+  ["Hard", function(){ config.difficulty = 2; cursor = 0; menu = meOptions; }]
 ];
