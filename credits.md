@@ -3,7 +3,6 @@
 ## Graphics
 
 [Kelvin Shadewing](http://kelvinshadewing.net) - Title BG, gameplay BG, stomach, birds, Hida, Passy
-[Robert Pelloni](http://bobcorporation.com/blog/) - Bob's Game font
 
 ## Music
 
