@@ -15,6 +15,8 @@
 donut("src/assets.nut");
 donut("src/bg.nut");
 donut("src/actors.nut");
+donut("src/prey.nut");
+donut("src/pred.nut");
 donut("src/globals.nut");
 donut("src/gmmain.nut");
 donut("src/menus.nut");
