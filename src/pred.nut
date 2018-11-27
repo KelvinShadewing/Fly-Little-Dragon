@@ -13,11 +13,11 @@ const predMiss = 3;
 //Wings need only increment.
 
 ::headFrames <- {
-  comito <- {
-    open <- [0, 0],
-    bite <- [0, 0],
-    gulp <- [0, 0],
-    miss <- [0, 0]
+  comito = {
+    open = [0, 0],
+    bite = [0, 0],
+    gulp = [0, 0],
+    miss = [0, 0]
   }
 };
 

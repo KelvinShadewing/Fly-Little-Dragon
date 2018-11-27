@@ -10,8 +10,8 @@
 
 	//Draw options
 	for(local i = 0; i < menu.len(); i++){
-		if(cursor == i) drawText(font, 200 - (menu[i][0].len() * 4), 238 - (menu.len() * 9) + (i * 9), "=> " + menu[i][0] + " <=");
-		else drawText(font, 200 -(menu[i][0] * 4), 238 - (menu.len() * 9) + (i * 9), menu[i][0]);
+		if(cursor == i) drawText(fnt0, 200 - (menu[i][0].len() * 6), 238 - (menu.len() * 14) + (i * 14), "=> " + menu[i][0] + " <=");
+		else drawText(fnt0, 200 -(menu[i][0] * 6), 238 - (menu.len() * 14) + (i * 14), menu[i][0]);
 	};
 
 	//Keyboard input
@@ -47,5 +47,5 @@
 ::meDifficulty <- [
   ["Easy", function(){ config.difficulty = 0; cursor = 0; menu = meOptions; }],
   ["Normal", function(){ config.difficulttty = 1; cursor = 0;     menu = meOptions; }],
-  ["Hard", function(){ config.difficulty = 2 cursor = 0; menu = meOptions; }]
+  ["Hard", function(){ config.difficulty = 2; cursor = 0; menu = meOptions; }]
 ];

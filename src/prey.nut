@@ -52,5 +52,5 @@
 		};
 	};
 
-  _typeof(){ return "Prey"; };
+  function _typeof(){ return "Prey"; };
 };

@@ -4,14 +4,24 @@
 
 //Audio
 ::music <- loadMusic("res/music.mp3");
+print("Loaded music.");
 ::sndAlarm <- loadSound("res/sndAlarm.wav");
+print("Loaded sndAlarm.");
 ::sndBird <- loadSound("res/sndBird.wav");
+print("Loaded sndBird.");
 ::sndBite <- loadSound("res/sndBite.wav");
+print("Loaded sndBite.");
 ::sndConfirm <- loadSound("res/sndConfirm.wav");
+print("Loaded sndConfirm.");
 ::sndDie <- loadSound("res/sndDie.wav");
+print("Loaded sndDie.");
 ::sndGulp <- loadSound("res/sndGulp.wav");
+print("Loaded sndGulp.");
 
 //Sprites
+::sprFont <- newSprite("res/sprFont.png", 12, 14, 0, 0, 0, 0, 0);
+::fnt0 <- newFont(sprFont, 0, 0, 1);
+
 //newSprite( file, width, height, margin, padding, pivotX, pivotY, frames );
 ::sprPrey <- {
 	"Hida" : [

@@ -14,6 +14,7 @@
 		if(keyPress(k_escape) || getQuit()) break;
 
 		gm();
+		textMenu();
 		drawDebug();
 
 		update();
