@@ -10,13 +10,8 @@
 
 	//Draw options
 	for(local i = 0; i < menu.len(); i++){
-<<<<<<< HEAD
-		if(cursor == i) drawText(fnt0, 200 - (menu[i][0].len() * 6), 238 - (menu.len() * 14) + (i * 14), "=> " + menu[i][0] + " <=");
-		else drawText(fnt0, 200 -(menu[i][0] * 6), 238 - (menu.len() * 14) + (i * 14), menu[i][0]);
-=======
 		if(cursor == i) drawText(font, 200 - ((menu[i].name().len() + 4) * 6), 238 - (menu.len() * 14) + (i * 14), "=>" + menu[i].name() + "<=");
 		else drawText(font, 200 -(menu[i].name().len() * 6), 238 - (menu.len() * 14) + (i * 14), menu[i].name());
->>>>>>> d28052ddad2f42ce23ba599e81ac7adc6aa4f1d1
 	};
 
 	//Keyboard input
@@ -88,11 +83,6 @@
 ];
 
 ::meDifficulty <- [
-<<<<<<< HEAD
-  ["Easy", function(){ config.difficulty = 0; cursor = 0; menu = meOptions; }],
-  ["Normal", function(){ config.difficulttty = 1; cursor = 0;     menu = meOptions; }],
-  ["Hard", function(){ config.difficulty = 2; cursor = 0; menu = meOptions; }]
-=======
   {
 		name = function(){ return "Easy"; },
 		func = function(){ config.difficulty = 0; cursor = 0; menu = meOptions; }
@@ -105,5 +95,4 @@
 		name = function(){ return "Hard"; },
 		func = function(){ config.difficulty = 2; cursor = 0; menu = meOptions; }
 	}
->>>>>>> d28052ddad2f42ce23ba599e81ac7adc6aa4f1d1
 ];
