@@ -10,7 +10,7 @@
 
 	//Draw options
 	for(local i = 0; i < menu.len(); i++){
-		if(cursor == i) drawText(font, 200 - ((menu[i].name().len() + 4) * 4), 238 - (menu.len() * 14) + (i * 14), "=>" + menu[i].name() + "<=");
+		if(cursor == i) drawText(font2, 200 -(menu[i].name().len() * 4), 238 - (menu.len() * 14) + (i * 14), menu[i].name());
 		else drawText(font, 200 -(menu[i].name().len() * 4), 238 - (menu.len() * 14) + (i * 14), menu[i].name());
 	};
 

@@ -23,6 +23,8 @@ print("Loaded sndGulp.");
 
 ::sprFont <- newSprite("res/sprFont.png", 12, 14, 0, 0, 0, 0, 0);
 ::font <- newFont(sprFont, 33, 0, 0, -4);
+::sprFont2 <- newSprite("res/sprFont2.png", 12, 14, 0, 0, 0, 0, 0);
+::font2 <- newFont(sprFont2, 33, 0, 0, -4);
 ::sprCereal <- newSprite("res/rings.png", 16, 16, 1, 1, 8, 8, 0);
 
 ::sprPrey <- {
