@@ -19,23 +19,21 @@ print("Loaded sndDie.");
 print("Loaded sndGulp.");
 
 //Sprites
-::sprFont <- newSprite("res/sprFont.png", 12, 14, 0, 0, 0, 0, 0);
-::fnt0 <- newFont(sprFont, 0, 0, 1);
-
 //newSprite( file, width, height, margin, padding, pivotX, pivotY, frames );
 
 ::sprFont <- newSprite("res/sprFont.png", 12, 14, 0, 0, 0, 0, 0);
-::font <- newFont(sprFont, 33, 0, 0);
+::font <- newFont(sprFont, 33, 0, 0, -4);
+::sprCereal <- newSprite("res/rings.png", 16, 16, 1, 1, 8, 8, 0);
 
 ::sprPrey <- {
-	"Hida" : [
-		["res/HidaFly.png", 63, 31, 1, 1, 32, 16, 0],
-		["res/HidaLose.png", 38, 44, 1, 1, 19, 44, 0]
-	],
-	"Passy" : [
-		["res/PassyFly.png", 63, 31, 1, 1, 32, 16, 0],
-		["res/PassyLose.png", 38, 44, 1, 1, 19, 44, 0]
-	]
+	"Hida" : {
+		fly = newSprite("res/HidaFly.png", 63, 31, 1, 1, 32, 16, 0),
+		lose = newSprite("res/HidaLose.png", 38, 44, 1, 1, 19, 44, 0)
+	},
+	"Passy" : {
+		fly = newSprite("res/PassyFly.png", 63, 31, 1, 1, 32, 16, 0),
+		lose = newSprite("res/PassyLose.png", 38, 44, 1, 1, 19, 44, 0)
+	}
 };
 
 //Predators are reloaded separately when switched

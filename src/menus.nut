@@ -10,8 +10,8 @@
 
 	//Draw options
 	for(local i = 0; i < menu.len(); i++){
-		if(cursor == i) drawText(font, 200 - ((menu[i].name().len() + 4) * 6), 238 - (menu.len() * 14) + (i * 14), "=>" + menu[i].name() + "<=");
-		else drawText(font, 200 -(menu[i].name().len() * 6), 238 - (menu.len() * 14) + (i * 14), menu[i].name());
+		if(cursor == i) drawText(font, 200 - ((menu[i].name().len() + 4) * 4), 238 - (menu.len() * 14) + (i * 14), "=>" + menu[i].name() + "<=");
+		else drawText(font, 200 -(menu[i].name().len() * 4), 238 - (menu.len() * 14) + (i * 14), menu[i].name());
 	};
 
 	//Keyboard input
@@ -43,15 +43,15 @@
 ::meMain <- [
 	{
 		name = function(){ return "Singleplayer"; },
-		func = function(){ gvPlayers = 1; gvDual = 0; gm = gmPlay; }
+		func = function(){ gvPlayers = 1; gvDual = 0; startPlay(0); }
 	},
 	{
 		name = function(){ return "Multiplayer"; },
-		func = function(){ gvPlayers = 2; gvDual = 0; gm = gmPlay; }
+		func = function(){ gvPlayers = 2; gvDual = 0; startPlay(1); }
 	},
 	{
 		name = function(){ return "Dual Stick"; },
-		func = function(){ gvPlayers = 2, gvDual = 1; gm = gmPlay; }
+		func = function(){ gvPlayers = 2, gvDual = 1; startPlay(2); }
 	},
 	{
 		name = function(){ return "Options"; },
@@ -69,11 +69,15 @@
 		func = function(){ cursor = 0; menu = meDifficulty; }
 	},
   {
-		name = function(){ return "Prey 1: " + gvPrey0; },
+		name = function(){ return "Prey 1: " + config.prey0; },
 		func = function(){}
 	},
   {
-		name = function(){ return "Prey 2: " + gvPrey1; },
+		name = function(){ return "Prey 2: " + config.prey1; },
+		func = function(){}
+	},
+	{
+		name = function(){ return "Predator: " + config.pred; },
 		func = function(){}
 	},
 	{

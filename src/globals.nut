@@ -5,9 +5,6 @@
 ::gvPlayers <- 0;
 ::gvQuit <- false;
 ::gvDebug <- true;
-::gvPredator <- "Comito";
-::gvPrey0 <- "Hida";
-::gvPrey1 <- "Passy";
 ::gm <- 0;
 ::bgx <- [0, 0, 0, 0];
 ::gvScore0 <- 0;
@@ -34,7 +31,10 @@
     down = k_s,
     left = k_a,
     right = k_d
-  }
+  },
+	prey0 = "Passy",
+	prey1 = "Hida",
+	pred = "Comito"
 };
 
 ::strDifficulty <- ["Easy", "Normal", "Difficult"];

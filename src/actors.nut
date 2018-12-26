@@ -56,8 +56,11 @@
 
 ::findActor <- function(type){
   foreach(i in actor){
-    if(typeof i == type) return i.id;
+    if(typeof i == type){
+			return i.id;
+			break;
+		};
   };
 
-  return 0;
+  return -1;
 };

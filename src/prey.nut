@@ -2,7 +2,29 @@
 | PREY SOURCE |
 \*===========*/
 
+::Cereal <- class extends Actor{
+	color = 0;
+	frame = 0;
+
+	constructor(_x, _y){
+		base.constructor(_x, _y);
+		color = randInt(10) * 4
+	};
+
+	function step(){
+		x -= 0;
+		if(x < -8) deleteActor(id);
+		frame += 0.25;
+		if(frame >=4) frame -= 4;
+		drawSprite(sprCereal, floor(frame) + color, x, y);
+		x -= 5;
+	};
+
+	function _typeof(){ return "Cereal"; };
+};
+
 ::Prey0 <- class extends Actor{
+	frame = 0;
 	xspd = 0;
 	yspd = 0;
 	mspd = 4;
@@ -11,6 +33,8 @@
 	energy = 100;
 	rings = 0;
 	blink = 0;
+	invis = false;
+	rush = 0;
 
 	constructor(_x, _y){
 		base.constructor(_x, _y);
@@ -27,30 +51,55 @@
 		if(xspd > -1) xspd -= 0.5;
 		if(xspd < -1) xspd += 0.5;
 		if(xspd > mspd) xspd = mspd;
-		if(xspd < -mspd) xsod = -mspd;
+		if(xspd < -mspd) xspd = -mspd;
 		if(yspd > 0) yspd -= 0.5;
 		if(yspd < 0) yspd += 0.5;
 		if(yspd > mspd) yspd = mspd;
 		if(yspd < -mspd) yspd = -mspd;
 
+		//Move
+		x += xspd;
+		y += yspd;
+
 		//Screen limits
-		if(x > 288){
-			x = 288;
+		if(x > 388){
+			x = 388;
 			xspd--;
 		};
-		if(x < 32){
-			x = 32;
+		if(x < 16){
+			x = 16;
 			xspd++;
 		};
-		if(y < 16){
-			y = 16;
+		if(y < 8){
+			y = 8;
 			yspd++;
 		};
-		if(y > 224){
-			y = 224;
+		if(y > 232){
+			y = 232;
 			yspd--;
+		};
+
+		//Draw
+		frame += 0.5;
+		invis = !invis;
+		if(blink == 0 || !invis) drawSprite(sprPrey[config.prey0].fly, frame, x, y);
+
+		//Collision
+		foreach(i in actor){
+			if(typeof i == "Cereal"){
+				if(i.x <= x + 20 && i.x >= x - 20 && i.y >= y - 12 && i.y <= y + 12){
+					energy += 10;
+					if(energy > 100) energy = 100;
+					deleteActor(i.id);
+				};
+			};
+
+			if(typeof i == "Bird" && blink == 0 && rush == 0){
+				xspd = -4;
+				blink = 60;
+			};
 		};
 	};
 
-  function _typeof(){ return "Prey"; };
+  function _typeof(){ return "Prey0"; };
 };

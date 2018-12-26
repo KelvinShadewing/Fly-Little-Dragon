@@ -20,6 +20,7 @@ donut("src/bird.nut");
 donut("src/pred.nut");
 donut("src/globals.nut");
 donut("src/gmmain.nut");
+donut("src/gmplay.nut");
 donut("src/menus.nut");
 donut("src/debug.nut");
 donut("src/main.nut");
