@@ -1,10 +1,12 @@
 ::cerealTimer <- 30;
 
 ::gmPlay <- function(){
+	drawBackground();
+
 	if(cerealTimer > 0) cerealTimer--;
 	else{
 		newActor(Cereal, 400, randInt(240));
-		cerealTimer = 30;
+		cerealTimer = 10 + randInt(20);
 	};
 
 	runActors();
