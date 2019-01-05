@@ -41,17 +41,20 @@
 	};
 
 	function step(){
+		//Stamina loss
+		if(energy > 0) energy -= 0.1;
+
 		//Acceleration
-		if(keyDown(k_left)) xspd--;
-		if(keyDown(k_right)) xspd++;
-		if(keyDown(k_up)) yspd--;
-		if(keyDown(k_down)) yspd++;
+		if(keyDown(config.con0.left)) xspd--;
+		if(keyDown(config.con0.right) && energy > 0) xspd++;
+		if(keyDown(config.con0.up)) yspd--;
+		if(keyDown(config.con0.down)) yspd++;
 
 		//Friction
 		if(xspd > -1) xspd -= 0.5;
 		if(xspd < -1) xspd += 0.5;
 		if(xspd > mspd) xspd = mspd;
-		if(xspd < -mspd) xspd = -mspd;
+		if(xspd < -mspd - 2) xspd = -mspd - 2;
 		if(yspd > 0) yspd -= 0.5;
 		if(yspd < 0) yspd += 0.5;
 		if(yspd > mspd) yspd = mspd;

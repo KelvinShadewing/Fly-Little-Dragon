@@ -14,7 +14,7 @@
 	//Draw stamina
 	local p = findActor("Prey0");
 	if(p != -1){
-		drawText(font, 8, 8, (actor[p].energy).tostring());
+		drawText(font, 8, 8, (round(actor[p].energy)).tostring());
 	} else drawText(font, 8, 8, (0).tostring());
 };
 
