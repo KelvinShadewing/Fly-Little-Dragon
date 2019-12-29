@@ -76,6 +76,9 @@ const predMiss = 3;
       };
     };
 
+    //Draw
+    //drawSprite()
+
   }; //End step()
 
 }; //End Predator
