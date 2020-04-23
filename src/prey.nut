@@ -27,7 +27,7 @@
 	frame = 0;
 	xspd = 0;
 	yspd = 0;
-	mspd = 4;
+	mspd = 4	;
 	r = 16;
 	colbuff = [];
 	energy = 100;
