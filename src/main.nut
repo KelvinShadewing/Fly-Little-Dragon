@@ -5,6 +5,7 @@
 	setWindowTitle("Fly, Little Dragon!");
 	gm = gmMain;
 	menu = meMain;
+	gvQuit = 0;
 
 	//Start the music
 	playMusic(music, -1);
