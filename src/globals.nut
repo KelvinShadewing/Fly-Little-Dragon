@@ -32,8 +32,8 @@
     left = k_a,
     right = k_d
   },
-	prey0 = "Passy",
-	prey1 = "Hida",
+	prey0 = "Hida",
+	prey1 = "Passy",
 	pred = "Comito"
 };
 

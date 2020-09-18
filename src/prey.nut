@@ -65,8 +65,8 @@
 		y += yspd;
 
 		//Screen limits
-		if(x > 388){
-			x = 388;
+		if(x > 308){
+			x = 308;
 			xspd--;
 		};
 		if(x < 16){

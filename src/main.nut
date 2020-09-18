@@ -1,7 +1,7 @@
 ::main <- function(){
 	//Set up the window
 	setFPS(30);
-	setResolution(400, 240);
+	setResolution(320, 240);
 	setWindowTitle("Fly, Little Dragon!");
 	gm = gmMain;
 	menu = meMain;

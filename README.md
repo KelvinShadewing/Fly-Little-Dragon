@@ -18,6 +18,10 @@ There are three game modes: singleplayer, multiplayer, and dual single. In singl
 
 Bonus points are earned by feeding birds to the pred. In multiplayer, the player who is closer to the pred will get the points, as they are the more daring player, but will also be the pred's target. The game ends when all prey characters are eaten. As the game progresses, birds will become more common, and some will even target one of the players.
 
+## **How to Play**
+
+Download the Brux GDK runtime environment and associate `.brx` files with it. Double click `fld.brx` to run the game.
+
 ## **Join the Feast!**
 
 Commissions will be opened to allow players to buy sprites and have them added to the game. While the game is open-source and can have any sprite added at any time, buying a sprite will ensure it matches the style of the game and will allow your character to be seen by everyone who plays. If you do not want to be in the game but would still like to support development, you can donate on my **[LIberapay](http://www.liberapay.com/kelvinshadewing)** or my **[Ko-Fi](http://www.ko-fi.com/kelvinshadewing)**.

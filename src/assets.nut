@@ -48,4 +48,4 @@ print("Loaded sndGulp.");
 ::bg1 <- newSprite("res/background1.png", 95, 48, 0, 0, 0, 0, 0);
 ::bg2 <- newSprite("res/background2.png", 144, 72, 0, 0, 0, 0, 0);
 ::bg3 <- newSprite("res/background3.png", 64, 96, 0, 0, 0, 0, 0);
-::bgTitle <- newSprite("res/titlebg.png", 400, 240, 0, 0, 0, 0, 0);
+::bgTitle <- newSprite("res/titlebg.png", 320, 240, 0, 0, 0, 0, 0);
