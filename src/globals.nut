@@ -13,9 +13,6 @@
 
 //Character tables
 //Predator legend: head, body, wings, bodytype
-::tbPred <- {
-	//"Comito" : [["ComitoHead.png", w, h, 0, 0, 0, 0, 0], ["ComitoBody.png", w, h, 0, 0, 0, 0, 0], ["ComitoWings.png", w, h, 0, 0, 0, 0, 0], "Gryphon"]
-};
 
 ::config <- {
   safe = 0,

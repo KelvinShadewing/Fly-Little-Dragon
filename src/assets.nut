@@ -38,10 +38,11 @@ print("Loaded sndGulp.");
 	}
 };
 
-//Predators are reloaded separately when switched
-::sprPredHead <- {};
-::sprPredBody <- {};
-::sprPredWing <- {};
+::sprPred <- {
+	"Comito" : {
+		head = 
+	}
+};
 
 //Background
 ::bg0 <- newSprite("res/background0.png", 160, 240, 0, 0, 0, 0, 0);

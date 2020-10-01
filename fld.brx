@@ -12,6 +12,7 @@
 | Code is free under GPL 3.0.            |
 \*======================================*/
 
+::debugMode <- false;
 donut("src/assets.nut");
 donut("src/bg.nut");
 donut("src/actors.nut");

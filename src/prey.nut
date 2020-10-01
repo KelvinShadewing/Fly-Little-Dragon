@@ -35,6 +35,7 @@
 	blink = 0;
 	invis = false;
 	rush = 0;
+	friction = 0.3;
 
 	constructor(_x, _y){
 		base.constructor(_x, _y);
@@ -51,14 +52,15 @@
 		if(keyDown(config.con0.down)) yspd++;
 
 		//Friction
-		if(xspd > -1) xspd -= 0.5;
-		if(xspd < -1) xspd += 0.5;
+		if(xspd > -1) xspd -= friction;
+		if(xspd < -1) xspd += friction;
 		if(xspd > mspd) xspd = mspd;
 		if(xspd < -mspd - 2) xspd = -mspd - 2;
-		if(yspd > 0) yspd -= 0.5;
-		if(yspd < 0) yspd += 0.5;
+		if(yspd > 0) yspd -= friction;
+		if(yspd < 0) yspd += friction;
 		if(yspd > mspd) yspd = mspd;
 		if(yspd < -mspd) yspd = -mspd;
+		if(abs(yspd) < friction) yspd = 0;
 
 		//Move
 		x += xspd;
@@ -86,6 +88,10 @@
 		frame += 0.5;
 		invis = !invis;
 		if(blink == 0 || !invis) drawSprite(sprPrey[config.prey0].fly, frame, x, y);
+		if(debugMode){
+			setDrawColor(0xff0000ff);
+			drawRect(x - 12, y - 4, 28, 16, false);
+		};
 
 		//Collision
 		foreach(i in actor){
