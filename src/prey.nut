@@ -17,6 +17,11 @@
 		frame += 0.25;
 		if(frame >=4) frame -= 4;
 		drawSprite(sprCereal, floor(frame) + color, x, y);
+		if(debugMode)
+		{
+			setDrawColor(0xff0000ff);
+			drawCircle(x, y, 6, false);
+		}
 		x -= 6;
 	};
 
