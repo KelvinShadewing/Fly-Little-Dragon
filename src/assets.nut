@@ -40,7 +40,15 @@ print("Loaded sndGulp.");
 
 ::sprPred <- {
 	"Comito" : {
-		head = 
+		head = newSprite("res/ComitoHead.png", 128, 72, 0, 0, 96, 40, 0),
+		body = newSprite("res/ComitoBody.png", 304, 96, 0, 0, 358, 38, 0),
+		wings = 0,
+		anim = {
+			idle = [0, 1],
+			snap = [2, 7],
+			miss = [8, 13],
+			gulp = [14, 23]
+		}
 	}
 };
 
