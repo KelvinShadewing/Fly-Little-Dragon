@@ -24,7 +24,7 @@
 			gvPlayers = 1;
 			gvDual = 0;
 			newActor(Prey0, 200, 120);
-			newActor(Predator, 0, 120);
+			newActor(Predator, 64, 120);
 			break;
 		case 1:
 			gvPlayers = 2;
