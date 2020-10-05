@@ -30,6 +30,7 @@ const predMiss = 3;
   bite = 0;
   miss = 0;
   gulp = 0;
+  anim = [];
 
   //Frame numbers
   fHead = 0;
@@ -50,6 +51,8 @@ const predMiss = 3;
     bite = sprPred[config.pred].anim.bite;
     miss = sprPred[config.pred].anim.miss;
     gulp = sprPred[config.pred].anim.gulp;
+
+    anim = idle;
   };
 
   function step(){
@@ -72,39 +75,64 @@ const predMiss = 3;
     };
 
     //Find target
-    local target = 0;
-    foreach(i in actor){
-      //If no player was found, search for birds
-      if(target == 0) foreach(i in actor)
-      {
-        if(typeof i == "Bird")
-        {
-          target = i.id;
-        };
-      };
-  
+    local target = -1;
+    foreach(i in actor)
+    {  
       if(typeof i == "Prey")
       { //See if any players exist
-        if(target == 0){ //If a target was not already found
+        if(target == -1)
+        { //If a target was not already found
           target = i.id;
-        } else
+        }
+        else
         {
-          if(i.x < actor[target].x){ //If the other player is closer
+          if(i.x < actor[target].x)
+          { //If the other player is closer
             target = i.id; //Change target to closer player
           };
         };
+      };
+    }; //End foreach
 
-
+    //If no player was found, search for birds
+    if(target == -1) foreach(i in actor)
+    {
+      if(typeof i == "Bird")
+      {
+        target = i.id;
+        break;
       };
     };
 
+    //Move after target
+    if(target != -1)
+    {
+      if(actor[target].y > y && yspeed < 2) yspeed += 0.2;
+      if(actor[target].y < y && yspeed > -2) yspeed -= 0.2;
+      if(actor[target].x < x && xspeed > -4) xspeed -= 0.2;
+      if(actor[target].x > x && xspeed < 1); xspeed += 0.2;
+    };
+
     //Draw
+    fBody += 0.5;
+    fHead += 0.5;
+    if(fHead > anim[1]) switch(anim)
+    {
+      case idle:
+        fHead = idle[0];
+        break;
+      case gulp:
+        fHead = idle[0];
+        anim = idle;
+        break;
+    }
     drawSprite(body, fBody, x, y);
     drawSprite(head, fHead, x, y);
     if(debugMode)
     {
       setDrawColor(0xff0000ff);
       drawCircle(x, y, 8, false);
+      if(target != -1) drawCircle(actor[target].x, actor[target].y, 32, false);
     }
 
   }; //End step()
