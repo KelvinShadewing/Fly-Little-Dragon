@@ -24,6 +24,9 @@
         visible = 1;
         break;
       case 50:
+        visible = 0;
+        break;
+      case 60:
         newActor(Bird, x, y);
         deleteActor(id);
         break;

@@ -5,8 +5,8 @@
 
 	if(cerealTimer > 0) cerealTimer--;
 	else{
-		newActor(Cereal, 400, randInt(240));
-		cerealTimer = 10 + randInt(20);
+		newActor(Cereal, 320, randInt(240));
+		cerealTimer = 10 + randInt(10);
 	};
 
 	runActors();

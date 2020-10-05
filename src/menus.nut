@@ -50,10 +50,6 @@
 		func = function(){ gvPlayers = 2; gvDual = 0; startPlay(1); }
 	},
 	{
-		name = function(){ return "Dual Stick"; },
-		func = function(){ gvPlayers = 2, gvDual = 1; startPlay(2); }
-	},
-	{
 		name = function(){ return "Options"; },
 		func = function(){ cursor = 0; menu = meOptions; }
 	},
