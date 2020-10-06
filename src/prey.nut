@@ -115,5 +115,5 @@
 		};
 	};
 
-  function _typeof(){ return "Prey0"; };
+	function _typeof(){ return "Prey0"; };
 };
