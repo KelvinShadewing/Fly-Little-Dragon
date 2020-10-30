@@ -13,9 +13,9 @@
 \*======================================*/
 
 ::debugMode <- false;
+donut("std/actors.nut");
 donut("src/assets.nut");
 donut("src/bg.nut");
-donut("src/actors.nut");
 donut("src/prey.nut");
 donut("src/bird.nut");
 donut("src/pred.nut");
