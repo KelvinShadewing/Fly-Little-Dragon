@@ -2,7 +2,7 @@
 // PREDATOR //
 //////////////
 
-const predOpen = 0;
+const predIdle = 0;
 const predBite = 1;
 const predGulp = 2;
 const predMiss = 3;
@@ -14,7 +14,7 @@ const predMiss = 3;
 
 ::headFrames <- {
 	comito = {
-		open = [0, 0],
+		idle = [0, 0],
 		bite = [0, 0],
 		gulp = [0, 0],
 		miss = [0, 0]
@@ -32,6 +32,8 @@ const predMiss = 3;
 	gulp = 0;
 	anim = [];
 
+	didcatch = false;
+
 	//Frame numbers
 	fHead = 0;
 	fBody = 0;
@@ -40,7 +42,7 @@ const predMiss = 3;
 	xspeed = 0;
 	yspeed = 0;
 
-	state = predOpen;
+	state = predIdle;
 
 	constructor(_x, _y){
 		base.constructor(_x, _y);

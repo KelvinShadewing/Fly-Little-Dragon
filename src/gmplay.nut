@@ -7,7 +7,7 @@
 	if(cerealTimer > 0) cerealTimer--;
 	else
 	{
-		newActor(Cereal, 320, randInt(240));
+		newActor(Cereal, 408, randInt(240));
 		cerealTimer = 10 + randInt(10);
 	};
 
@@ -19,7 +19,7 @@
 	{
 		drawText(font, 8, 8, (round(actor[p].energy)).tostring());
 	} else drawText(font, 8, 8, (0).tostring());
-};
+}
 
 ::startPlay <- function(playmode)
 {
@@ -50,3 +50,4 @@
 
 	gm = gmPlay;
 };
+
