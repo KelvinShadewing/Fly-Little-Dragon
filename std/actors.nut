@@ -77,7 +77,7 @@
 	return -1;
 }
 
-::deleteAllActors() <- function()
+::deleteAllActors <- function()
 {
 	foreach(i in actor)
 	{

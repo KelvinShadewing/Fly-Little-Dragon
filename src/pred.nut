@@ -35,9 +35,9 @@ const predMiss = 3;
 	didcatch = false;
 
 	//Frame numbers
-	fHead = 0;
-	fBody = 0;
-	fWing = 0;
+	fHead = 0.0;
+	fBody = 0.0;
+	fWing = 0.0;
 
 	xspeed = 0;
 	yspeed = 0;
@@ -136,8 +136,8 @@ const predMiss = 3;
 				anim = idle;
 				break;
 		}
-		drawSprite(body, fBody, x, y);
-		drawSprite(head, fHead, x, y);
+		drawSprite(body, fBody, floor(x), floor(y));
+		drawSprite(head, fHead, floor(x), floor(y));
 		if(debugMode)
 		{
 			setDrawColor(0xff0000ff);

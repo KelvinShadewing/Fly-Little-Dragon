@@ -19,6 +19,9 @@
 	{
 		drawText(font, 8, 8, (round(actor[p].energy)).tostring());
 	} else drawText(font, 8, 8, (0).tostring());
+
+	//Quit
+	if(keyPress(k_escape)) endPlay();
 }
 
 ::startPlay <- function(playmode)
@@ -51,3 +54,8 @@
 	gm = gmPlay;
 };
 
+::endPlay <- function()
+{
+	deleteAllActors();
+	gm = gmMain;
+}
