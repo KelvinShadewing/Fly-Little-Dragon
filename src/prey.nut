@@ -11,7 +11,7 @@
 		color = randInt(10) * 4
 	};
 
-	function step(){
+	function run(){
 		x -= 0;
 		if(x < -8) deleteActor(id);
 		frame += 0.25;
@@ -46,7 +46,7 @@
 		base.constructor(_x, _y);
 	};
 
-	function step(){
+	function run(){
 		//Stamina loss
 		if(energy > 0) energy -= 0.1;
 

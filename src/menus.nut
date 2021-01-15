@@ -30,14 +30,6 @@
 	};
 };
 
-/*::meMain <- [
-	["Singleplayer", function(){ gvPlayers = 1; gvDual = 0; gm = gmPlay; }],
-	["Multiplayer", function(){ gvPlayers = 2; gvDual = 0; gm = gmPlay; }],
-	["Dual Stick", function(){ gvPlayers = 2, gvDual = 1; gm = gmPlay; }],
-	["Options", function(){ cursor = 0; menu = meOptions; }],
-	["Quit", function(){ gvQuit = 1; }]
-];*/
-
 //Names are stored as functions because some need to change each time
 //they're brought up again.
 ::meMain <- [

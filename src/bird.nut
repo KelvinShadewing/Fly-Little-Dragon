@@ -6,7 +6,7 @@
 	timer = 0;
 	visible = 1;
 
-	function step(){
+	function run(){
 		switch(timer){
 			case 0:
 				visible = 1;

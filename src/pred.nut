@@ -57,8 +57,8 @@ const predMiss = 3;
 		anim = idle;
 	};
 
-	function step(){
-		base.step();
+	function run(){
+		base.run();
 
 		//Movement and bounds
 		x += xspeed;
