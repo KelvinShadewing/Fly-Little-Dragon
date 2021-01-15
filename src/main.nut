@@ -8,7 +8,7 @@
 	gvQuit = 0;
 
 	//Start the music
-	playMusic(music, -1);
+	//playMusic(music, -1);
 
 	//Main game loop
 	while(!gvQuit){

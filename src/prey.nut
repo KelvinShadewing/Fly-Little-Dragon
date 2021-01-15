@@ -32,7 +32,7 @@
 	frame = 0;
 	xspd = 0;
 	yspd = 0;
-	mspd = 4	;
+	mspd = 5;
 	r = 16;
 	colbuff = [];
 	energy = 100;
@@ -101,7 +101,7 @@
 		//Collision
 		foreach(i in actor){
 			if(typeof i == "Cereal"){
-				if(i.x <= x + 20 && i.x >= x - 20 && i.y >= y - 12 && i.y <= y + 12){
+				if(i.x <= x + 24 && i.x >= x - 24 && i.y >= y - 14 && i.y <= y + 14){
 					energy += 10;
 					if(energy > 100) energy = 100;
 					deleteActor(i.id);

@@ -29,11 +29,11 @@ print("Loaded sndGulp.");
 
 ::sprPrey <- {
 	"Hida" : {
-		fly = newSprite("res/HidaFly.png", 63, 31, 1, 1, 32, 16, 0),
+		fly = newSprite("res/HidaFly.png", 63, 31, 1, 1, 32, 20, 0),
 		lose = newSprite("res/HidaLose.png", 38, 44, 1, 1, 19, 44, 0)
 	},
 	"Passy" : {
-		fly = newSprite("res/PassyFly.png", 63, 31, 1, 1, 32, 16, 0),
+		fly = newSprite("res/PassyFly.png", 63, 31, 1, 1, 32, 20, 0),
 		lose = newSprite("res/PassyLose.png", 38, 44, 1, 1, 19, 44, 0)
 	}
 };
