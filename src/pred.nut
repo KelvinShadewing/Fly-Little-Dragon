@@ -145,6 +145,7 @@ const predMiss = 3;
 			if(target != -1) drawCircle(actor[target].x, actor[target].y, 32, false);
 		}
 
+		
 	}; //End step()
 
 }; //End Predator
