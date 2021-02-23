@@ -10,6 +10,7 @@
 ::gvScore0 <- 0;
 ::gvScore1 <- 0;
 ::gvDual <- 0;
+::gvOverTimer <- 120;
 
 //Character tables
 //Predator legend: head, body, wings, bodytype
