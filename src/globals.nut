@@ -2,15 +2,15 @@
 // GLOBAL VARS //
 /////////////////
 
-::gvPlayers <- 0;
-::gvQuit <- false;
-::gvDebug <- true;
-::gm <- 0;
-::bgx <- [0, 0, 0, 0];
-::gvScore0 <- 0;
-::gvScore1 <- 0;
-::gvDual <- 0;
-::gvOverTimer <- 120;
+::gvPlayers <- 0
+::gvQuit <- false
+::gvDebug <- true
+::gm <- 0
+::bgx <- [0, 0, 0, 0]
+::gvScore0 <- 0
+::gvScore1 <- 0
+::gvDual <- 0
+::gvOverTimer <- 120
 
 //Character tables
 //Predator legend: head, body, wings, bodytype
@@ -33,6 +33,6 @@
 	prey0 = "Hida",
 	prey1 = "Passy",
 	pred = "Comito"
-};
+}
 
-::strDifficulty <- ["Easy", "Normal", "Difficult"];
+::strDifficulty <- ["Easy", "Normal", "Difficult"]
