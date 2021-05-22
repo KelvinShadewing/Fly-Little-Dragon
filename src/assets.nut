@@ -42,7 +42,7 @@ print("Loaded sndGulp.")
 	"Comito" : {
 		head = newSprite("res/ComitoHead.png", 128, 72, 0, 0, 96, 40, 0),
 		body = newSprite("res/ComitoBody.png", 304, 96, 0, 0, 360, 38, 0),
-		wing = 0,
+		wing = newSprite("res/ComitoWing.png", 139, 155, 0, 0, 232, 110, 0),
 		anim = {
 			idle = [0, 1],
 			bite = [2, 7],

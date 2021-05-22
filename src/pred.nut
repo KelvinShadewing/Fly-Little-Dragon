@@ -132,6 +132,7 @@ const predMiss = 3
 		}
 
 		drawSprite(body, getFrames() / 4, floor(x), floor(y))
+		drawSprite(wing, getFrames() / 5, floor(x), floor(y))
 		drawSprite(head, fHead, floor(x), floor(y))
 
 		if(debugMode) {
