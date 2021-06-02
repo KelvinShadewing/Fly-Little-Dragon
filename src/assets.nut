@@ -35,6 +35,10 @@ print("Loaded sndGulp.")
 	"Passy" : {
 		fly = newSprite("res/PassyFly.png", 63, 31, 1, 1, 32, 20, 0),
 		lose = newSprite("res/PassyLose.png", 38, 44, 1, 1, 19, 44, 0)
+	},
+	"Kelvin" : {
+		fly = newSprite("res/KelvinFly.png", 47, 28, 0, 0, 24, 14, 0),
+		lose = 0
 	}
 }
 
@@ -51,6 +55,9 @@ print("Loaded sndGulp.")
 		}
 	}
 }
+
+//Misc prey
+::sprPone0 <- newSprite("res/pone0.png", 32, 30, 0, 0, 16, 14, 0)
 
 //Background
 ::bg0 <- newSprite("res/background0.png", 160, 240, 0, 0, 0, 0, 0)

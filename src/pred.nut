@@ -124,11 +124,13 @@ const predMiss = 3
 			case idle:
 				fHead = wrap(fHead, anim[0], anim[1])
 				break
-
+			case bite:
+				break
+			case miss:
 			case gulp:
 				fHead = idle[0]
 				anim = idle
-				break;
+				break
 		}
 
 		drawSprite(body, getFrames() / 4, floor(x), floor(y))
