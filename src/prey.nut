@@ -13,7 +13,7 @@
 
 	function run() {
 		if(x < -8) deleteActor(id)
-		frame += 0.25
+		frame += 0.1
 		if(frame >=4) frame -= 4
 		drawSprite(sprCereal, floor(frame) + color, x, y)
 
@@ -22,7 +22,7 @@
 			drawCircle(x, y, 6, false)
 		}
 
-		x -= 3
+		x -= 1.5
 	}
 
 	function _typeof(){ return "Cereal" }
@@ -31,7 +31,7 @@
 ::Prey <- class extends Actor {
 	xspd = 0
 	yspd = 0
-	mspd = 3
+	mspd = 1.5
 	r = 16
 	colbuff = []
 	energy = 100
@@ -39,7 +39,7 @@
 	blink = 0
 	invis = false
 	rush = 0
-	friction = 0.25
+	friction = 0.02
 	con = 0
 
 	constructor(_x, _y) {
@@ -48,19 +48,21 @@
 
 	function run() {
 		//Stamina loss
-		if(energy > 0) energy -= 0.1
+		if(energy > 0) energy -= 0.05
+		if(energy <= 0) mspd = 0.8
+		else mspd = 1.5
 
 		//Acceleration
-		if(keyDown(con.left)) xspd -= 0.5
-		if(keyDown(con.right) && energy > 0) xspd += 0.5
-		if(keyDown(con.up)) yspd -= 0.5
-		if(keyDown(con.down)) yspd += 0.5
+		if(keyDown(con.left)) xspd -= 0.1
+		if(keyDown(con.right) && energy > 0) xspd += 0.1
+		if(keyDown(con.up)) yspd -= 0.1
+		if(keyDown(con.down)) yspd += 0.1
 
 		//Friction
-		if(xspd > -0.5) xspd -= friction
-		if(xspd < -0.5) xspd += friction
+		if(xspd > -0.1) xspd -= friction
+		if(xspd < -0.1) xspd += friction
 		if(xspd > mspd) xspd = mspd
-		if(xspd < -mspd - 2) xspd = -mspd - 2
+		if(xspd < -mspd - 0.8) xspd = -mspd - 0.8
 		if(yspd > 0) yspd -= friction
 		if(yspd < 0) yspd += friction
 		if(yspd > mspd) yspd = mspd
@@ -123,7 +125,7 @@
 
 		//Draw
 		invis = !invis
-		if(blink == 0 || !invis) drawSprite(sprPrey[config.prey0].fly, getFrames() / 4, x, y)
+		if(blink == 0 || !invis) drawSprite(sprPrey[config.prey0].fly, getFrames() / 8, x, y)
 		if(debugMode) {
 			setDrawColor(0xff0000ff)
 			drawRect(x - 12, y - 4, 28, 16, false)
@@ -145,7 +147,7 @@
 		//Draw
 		frame += 0.5
 		invis = !invis
-		if(blink == 0 || !invis) drawSprite(sprPrey[config.prey1].fly, frame, x, y)
+		if(blink == 0 || !invis) drawSprite(sprPrey[config.prey1].fly, getFrames() / 8, x, y)
 
 		if(debugMode) {
 			setDrawColor(0xff0000ff)

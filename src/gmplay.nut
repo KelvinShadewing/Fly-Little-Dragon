@@ -6,7 +6,7 @@
 	if(cerealTimer > 0) cerealTimer--
 	else {
 		newActor(Cereal, 408, randInt(240))
-		cerealTimer = 30 + randInt(10)
+		cerealTimer = 60 + randInt(30)
 	}
 
 	runActors()
@@ -34,7 +34,7 @@
 			gvPlayers = 1
 			gvDual = 0
 			newActor(Prey0, 200, 120)
-			newActor(Predator, 128, 120)
+			newActor(Predator, 32, 120)
 			break
 
 		case 1:
@@ -42,7 +42,7 @@
 			gvDual = 0
 			newActor(Prey0, 200, 100)
 			newActor(Prey1, 200, 140)
-			newActor(Predator, 64, 120)
+			newActor(Predator, 32, 120)
 			break
 
 		case 2:
@@ -50,7 +50,7 @@
 			gvDual = 1
 			newActor(Prey0, 200, 100)
 			newActor(Prey1, 200, 140)
-			newActor(Predator, 64, 120)
+			newActor(Predator, 32, 120)
 			break
 	}
 

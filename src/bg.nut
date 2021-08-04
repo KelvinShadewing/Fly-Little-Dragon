@@ -20,7 +20,7 @@
 
 	//Shift coords
 	for(local i = 0; i < 4; i++) {
-		bgx[i] -= 1 + (i * 2)
+		bgx[i] -= 0.5 + (i * 0.5)
 	}
 
 	//Reset coords

@@ -64,10 +64,10 @@ const predMiss = 3
 		foreach(i in actor) {
 			if(typeof i == "Prey0" || typeof i == "Prey1") { //See if any players exist
 				if(target == -1) { //If a target was not already found
-					target = i.id
+					target = i
 				} else {
 					if(i.x < actor[target].x) { //If the other player is closer
-						target = i.id //Change target to closer player
+						target = i //Change target to closer player
 					}
 				}
 			}
@@ -78,7 +78,7 @@ const predMiss = 3
 		{
 			if(typeof i == "Bird")
 			{
-				target = i.id;
+				target = i;
 				break;
 			}
 		}
@@ -86,10 +86,15 @@ const predMiss = 3
 		//Move after target
 		if(target != -1)
 		{
-			if(actor[target].y > y + 0.2 && yspeed < 1.5) yspeed += 0.25
-			if(actor[target].y < y - 0.2 && yspeed > -1.5) yspeed -= 0.25
-			if(actor[target].x < x && xspeed > -2) xspeed -= 0.2
-			if(actor[target].x > x && xspeed < 0.05); xspeed += 0.05
+			if(target.y > y + 0.2 && yspeed < 1.5) yspeed += 0.06
+			if(target.y < y - 0.2 && yspeed > -1.5) yspeed -= 0.06
+			if(target.x < x && xspeed > -2) xspeed -= 0.05
+			if(target.x > x && xspeed < 0.05); xspeed += 0.005
+
+			if(distance2(x, y, target.x, target.y) <= 10 && anim == idle) {
+				anim = bite
+				fHead = anim[0]
+			}
 		}
 
 		//Limits
@@ -110,9 +115,9 @@ const predMiss = 3
 			xspeed = 0
 		}
 
-		if(abs(yspeed) < 0.2) yspeed = 0
-		if(yspeed > 0) yspeed -= 0.1
-		if(yspeed < 0) yspeed += 0.1
+		if(abs(yspeed) < 0.05) yspeed = 0
+		if(yspeed > 0) yspeed -= 0.02
+		if(yspeed < 0) yspeed += 0.02
 
 		x += xspeed
 		y += yspeed
@@ -124,8 +129,16 @@ const predMiss = 3
 			case idle:
 				fHead = wrap(fHead, anim[0], anim[1])
 				break
+
 			case bite:
+				if(distance2(x, y, target.x, target.y) < 12) {
+					anim = gulp
+					deleteActor(target.id)
+				}
+				else anim = miss
+				fHead = anim[0]
 				break
+
 			case miss:
 			case gulp:
 				fHead = idle[0]
@@ -134,7 +147,7 @@ const predMiss = 3
 		}
 
 		drawSprite(body, getFrames() / 4, floor(x), floor(y))
-		drawSprite(wing, getFrames() / 5, floor(x), floor(y))
+		drawSprite(wing, getFrames() / 12, floor(x), floor(y))
 		drawSprite(head, fHead, floor(x), floor(y))
 
 		if(debugMode) {

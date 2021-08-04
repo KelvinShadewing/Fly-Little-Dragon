@@ -1,6 +1,6 @@
 ::main <- function() {
 	//Set up the window
-	setFPS(25)
+	setFPS(60)
 	setResolution(400, 240)
 	setWindowTitle("Fly, Little Dragon!")
 	gm = gmMain
