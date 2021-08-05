@@ -61,6 +61,6 @@
 }
 
 ::endPlay <- function() {
-	deleteAllActors()
+	actor = {}
 	gm = gmMain
 }

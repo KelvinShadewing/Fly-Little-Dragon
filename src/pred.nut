@@ -89,17 +89,22 @@ const predMiss = 3
 			if(target.y > y + 0.2 && yspeed < 1.5) yspeed += 0.06
 			if(target.y < y - 0.2 && yspeed > -1.5) yspeed -= 0.06
 			if(target.x < x && xspeed > -2) xspeed -= 0.05
-			if(target.x > x && xspeed < 0.05); xspeed += 0.005
+			xspeed += 0.005
 
-			if(distance2(x, y, target.x, target.y) <= 10 && anim == idle) {
+			if(xspeed > 0.05 && x < target.x && distance2(x, y, target.x, target.y) > 64) xspeed -= 0.05
+
+			if(distance2(x - 8, y, target.x, target.y) <= 10 && anim == idle) {
 				anim = bite
 				fHead = anim[0]
+				target.xspd = -1
 			}
+		} else {
+			if(xspeed < 1 && x < 200) xspeed += 0.02
+			xspeed -= 0.01
 		}
 
 		//Limits
-		if(xspeed > 0.05) xspeed = 0.05
-		if(xspeed < -2) xspeed = -2
+		if(xspeed < -1) xspeed = -1
 		if(y > 240) {
 			y = 240
 			yspeed = 0
@@ -131,7 +136,7 @@ const predMiss = 3
 				break
 
 			case bite:
-				if(distance2(x, y, target.x, target.y) < 12) {
+				if(distance2(x - 8, y, target.x, target.y) < 16) {
 					anim = gulp
 					deleteActor(target.id)
 				}
