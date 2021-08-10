@@ -66,7 +66,7 @@ const predMiss = 3
 				if(target == -1) { //If a target was not already found
 					target = i
 				} else {
-					if(i.x < actor[target].x) { //If the other player is closer
+					if(i.x < target.x) { //If the other player is closer
 						target = i //Change target to closer player
 					}
 				}
