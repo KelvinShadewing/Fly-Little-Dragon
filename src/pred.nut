@@ -42,7 +42,7 @@ const predMiss = 3
 
 	state = predIdle
 
-	constructor(_x, _y) {
+	constructor(_x, _y, _arr = null) {
 		base.constructor(_x, _y)
 		body = sprPred[config.pred].body
 		head = sprPred[config.pred].head

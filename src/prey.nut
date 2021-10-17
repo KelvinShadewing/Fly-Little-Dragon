@@ -6,7 +6,7 @@
 	color = 0
 	frame = 0
 
-	constructor(_x, _y) {
+	constructor(_x, _y, _arr = null) {
 		base.constructor(_x, _y)
 		color = randInt(10) * 4
 	}
@@ -42,7 +42,7 @@
 	friction = 0.02
 	con = 0
 
-	constructor(_x, _y) {
+	constructor(_x, _y, _arr = null) {
 		base.constructor(_x, _y)
 	}
 
@@ -115,7 +115,7 @@
 };
 
 ::Prey0 <- class extends Prey {
-	constructor(_x, _y) {
+	constructor(_x, _y, _arr = null) {
 		base.constructor(_x, _y)
 		con = config.con0
 	}
@@ -136,7 +136,7 @@
 }
 
 ::Prey1 <- class extends Prey {
-	constructor(_x, _y) {
+	constructor(_x, _y, _arr = null) {
 		base.constructor(_x, _y)
 		con = config.con1
 	}
