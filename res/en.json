@@ -1,0 +1,24 @@
+{
+	"main-menu" : {
+		"single" : "Single Player",
+		"multi" : "Multi Player",
+		"options" : "Options",
+		"quit" : "Quit"
+	},
+
+	"options-menu" : {
+		"difficulty" : "Difficulty",
+		"player0" : "Prey A",
+		"player1" : "Prey B",
+		"pred" : "Predator",
+		"fullscreen" : "Full Screen",
+		"cursor" : "Mouse Cursor"
+	},
+
+	"boolean" : {
+		"on" : "On",
+		"off" : "Off",
+		"yes" : "Yes",
+		"no" : "No"
+	}
+}

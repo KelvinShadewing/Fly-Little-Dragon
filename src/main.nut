@@ -9,6 +9,9 @@
 
 	if(fileExists("config.json")) config = mergeTable(config, jsonRead(fileRead("config.json")))
 
+	local modlist = lsdir("mods")
+	for(local i = 0; i < modlist.len(); i++) if(modlist[i] != "." && modlist[i] != "..") donut("mods/" + modlist[i])
+
 	//Start the music
 	//playMusic(music, -1)
 

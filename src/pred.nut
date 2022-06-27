@@ -88,7 +88,11 @@ const predMiss = 3
 		{
 			if(target.y > y + 0.2 && yspeed < 1.5) yspeed += 0.06
 			if(target.y < y - 0.2 && yspeed > -1.5) yspeed -= 0.06
-			if(target.x < x && xspeed > -2) xspeed -= 0.05
+			if(target.x < x) {
+				if(xspeed > -2) xspeed -= 0.15
+				if(target.y < y) yspeed -= 0.15
+				if(target.y > y) yspeed += 0.15
+			}
 			xspeed += 0.005
 
 			if(xspeed > 0.05 && x < target.x && distance2(x, y, target.x, target.y) > 64) xspeed -= 0.05

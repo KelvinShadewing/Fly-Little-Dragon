@@ -58,9 +58,6 @@ print("Loaded sndGulp.")
 	}
 }
 
-//Misc prey
-::sprPone0 <- newSprite("res/pone0.png", 32, 30, 0, 0, 16, 14)
-
 //Background
 ::bg0 <- newSprite("res/background0.png", 160, 240, 0, 0, 0, 0)
 ::bg1 <- newSprite("res/background1.png", 95, 48, 0, 0, 0, 0)

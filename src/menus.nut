@@ -139,15 +139,15 @@ const menuY = 40
 	},
 	{
 		name = function(){ return "Prey 1: " + config.prey0 },
-		func = function(){}
+		func = function(){ startCharSel(0) }
 	},
 	{
 		name = function(){ return "Prey 2: " + config.prey1 },
-		func = function(){}
+		func = function(){ startCharSel(1) }
 	},
 	{
 		name = function(){ return "Predator: " + config.pred },
-		func = function(){}
+		func = function(){ startCharSel(2) }
 	},
 	{
 		name = function(){ return "Back" },

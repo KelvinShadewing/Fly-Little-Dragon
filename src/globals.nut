@@ -31,9 +31,10 @@
 		right = k_d
 	},
 	prey0 = "Kelvin",
-	prey1 = "Passy",
+	prey1 = "Pony",
 	pred = "Comito",
-	showcursor = false
+	showcursor = false,
+	fullscreen = false
 }
 
 ::strDifficulty <- ["Easy", "Normal", "Difficult"]
