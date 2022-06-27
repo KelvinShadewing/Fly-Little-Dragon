@@ -74,8 +74,8 @@
 		y += yspd
 
 		//Screen limits
-		if(x > 388) {
-			x = 388
+		if(x > 408) {
+			x = 408
 			xspd--
 		}
 
@@ -125,7 +125,7 @@
 
 		//Draw
 		invis = !invis
-		if(blink == 0 || !invis) drawSprite(sprPrey[config.prey0].fly, getFrames() / 8, x, y)
+		if(blink == 0 || !invis) drawSprite(sprPrey[config.prey0].fly, getFrames() / 6, x, y)
 		if(debugMode) {
 			setDrawColor(0xff0000ff)
 			drawRect(x - 12, y - 4, 28, 16, false)
@@ -147,7 +147,7 @@
 		//Draw
 		frame += 0.5
 		invis = !invis
-		if(blink == 0 || !invis) drawSprite(sprPrey[config.prey1].fly, getFrames() / 8, x, y)
+		if(blink == 0 || !invis) drawSprite(sprPrey[config.prey1].fly, getFrames() / 6, x, y)
 
 		if(debugMode) {
 			setDrawColor(0xff0000ff)

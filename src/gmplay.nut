@@ -5,7 +5,7 @@
 
 	if(cerealTimer > 0) cerealTimer--
 	else {
-		newActor(Cereal, 408, randInt(240))
+		newActor(Cereal, 432, randInt(240))
 		cerealTimer = 60 + randInt(30)
 	}
 

@@ -3,30 +3,111 @@
 ///////////
 
 ::menu <- []
+::menuLast <- []
+::menuItemsPos <- [] //Positions of all menu items
 ::cursor <- 0
-::textMenu <- function() {
+::cursorOffset <- 0
+::cursorTimer <- 30
+const menuMax = 8 //Maximum number of slots that can be shown on screen
+const fontW = 8
+const fontH = 14
+const menuY = 40
+
+::textMenu <- function(){
 	//If no menu is loaded
 	if(menu == []) return
 
-	//Draw options
-	for(local i = 0; i < menu.len(); i++) {
-		if(cursor == i) drawText(font2, 200 -(menu[i].name().len() * 4), 238 - (menu.len() * 14) + (i * 14), menu[i].name())
-		else drawText(font, 200 -(menu[i].name().len() * 4), 238 - (menu.len() * 14) + (i * 14), menu[i].name())
+	if(menu != menuLast) {
+		cursor = 0
+		cursorOffset = 0
 	}
+	menuLast = menu
+	menuItemsPos = []
+
+	//Draw options
+	//The number
+	if(menu.len() > menuMax) for(local i = cursorOffset; i < cursorOffset + menuMax; i++) {
+		//Detect if menu item is disabled (has no function). Display it with gray font if so.
+		local currFont = font
+		if(cursor == i) currFont = font2
+		if(menu[i].rawin("disabled")) { currFont = font2G }
+
+		local textX = (screenW() / 2) - (menu[i].name().len() * 4)
+		local textY = screenH() - menuY - (menuMax * fontH) + ((i - cursorOffset) * fontH)
+
+		drawText(currFont, textX, textY, menu[i].name())
+		menuItemsPos.append({index = i, x = textX, y = textY, len = menu[i].name().len() * fontW})
+
+		//Draw scroll indicators
+		if(cursorOffset > 0) for(local i = 0; i < 4; i++) drawSprite(font2, 103, (screenW() / 2 - 24) + (i * 12), screenH() - menuY - (fontH * (menuMax + 1)))
+		if(cursorOffset < menu.len() - menuMax) for(local i = 0; i < 4; i++) drawSprite(font2, 98, (screenW() / 2 - 24) + (i * 12), screenH() - menuY)
+	}
+	else for(local i = 0; i < menu.len(); i++) {
+		//Detect if menu item is disabled (has no function). Display it with gray font if so.
+		local currFont = font
+		if(cursor == i) currFont = font2
+		if(menu[i].rawin("disabled")) { currFont = font2G }
+
+		local textX = (screenW() / 2) - (menu[i].name().len() * 4)
+		local textY = screenH() - menuY - (menu.len() * fontH) + (i * fontH)
+
+		drawText(currFont, textX, textY, menu[i].name())
+		menuItemsPos.append({index = i, x = textX, y = textY, len = menu[i].name().len() * fontW})
+	}
+
+	//Mouse cursor update + left click input check
+	updateCursor()
+	if(mouseRelease(0)) processCursorInput()
 
 	//Keyboard input
-	if(keyPress(k_down)) {
+	if(keyPress(k_down) || (keyDown(k_down) && cursorTimer <= 0)) {
 		cursor++
-		if(cursor >= menu.len()) cursor = 0
+		if(cursor >= cursorOffset + menuMax) cursorOffset++
+		if(cursor >= menu.len()) {
+			cursor = 0
+			cursorOffset = 0
+		}
+		if(keyPress(k_down)) cursorTimer = 40
+		else cursorTimer = 10
+		playSound(sndMenuMove, 0)
 	}
 
-	if(keyPress(k_up)) {
+	if(keyPress(k_up) || (keyDown(k_up) && cursorTimer <= 0)) {
 		cursor--
-		if(cursor < 0) cursor = menu.len() - 1
+		if(cursor < cursorOffset) cursorOffset--
+		if(cursor < 0) {
+			cursor = menu.len() - 1
+			if(menu.len() > menuMax) cursorOffset = menu.len() - menuMax
+		}
+		if(keyPress(k_up)) cursorTimer = 40
+		else cursorTimer = 10
+		playSound(sndMenuMove, 0)
 	}
 
-	if(keyPress(k_space) || keyPress(k_return)) {
+	if(keyDown(k_down) || keyDown(k_up)) cursorTimer--
+
+	if(keyPress(k_space) || keyPress(k_enter)) {
+		if(menu[cursor].rawin("disabled")) return;
 		menu[cursor].func()
+		playSound(sndMenuSelect, 0)
+	}
+
+	if(keyPress(k_escape)) {
+		for(local i = 0; i < menu.len(); i++) {
+				if(menu[i].rawin("back")) {
+					menu[i]["back"]()
+					break
+				}
+		}
+	}
+
+	if(mouseWheelY() < 0 && cursorOffset < menu.len() - menuMax) {
+		cursorOffset++
+		cursor++
+	}
+	if(mouseWheelY() > 0 && cursorOffset > 0) {
+		cursorOffset--
+		cursor--
 	}
 }
 

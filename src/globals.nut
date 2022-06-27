@@ -32,7 +32,8 @@
 	},
 	prey0 = "Kelvin",
 	prey1 = "Passy",
-	pred = "Comito"
+	pred = "Comito",
+	showcursor = false
 }
 
 ::strDifficulty <- ["Easy", "Normal", "Difficult"]
