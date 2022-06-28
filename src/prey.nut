@@ -104,11 +104,13 @@
 				}
 			}
 
-			if(typeof i == "Bird" && blink == 0 && rush == 0) {
+			if(typeof i == "Bird" && blink == 0 && rush == 0) if(distance2(x, y, i.x, i.y) <= 24) {
 				xspd = -4
 				blink = 60
 			}
 		}
+
+		if(blink > 0) blink--
 	}
 
 	function _typeof(){ return "Prey" }
@@ -156,4 +158,37 @@
 	}
 
 	function _typeof(){ return "Prey1" }
+}
+
+::Robin <- class extends Actor {
+	ystart = 0
+	blink = 0
+
+	constructor(_x, _y, _arr = null) {
+		base.constructor(_x, _y)
+		ystart = _y
+	}
+
+	function run() {
+		x -= 1
+		if(x < -32) deleteActor(id)
+		y = ystart + (sin(x / 30.0) * 64)
+
+		drawSprite(sprRobin, getFrames() / 4, x, y)
+	}
+
+	function _typeof(){ return "Bird" }
+}
+
+::Bluejay <- class extends Actor {
+	blink = 0
+
+	function run() {
+		x -= 2
+		if(x < -32) deleteActor(id)
+
+		drawSprite(sprBluejay, getFrames() / 4, x, y)
+	}
+
+	function _typeof(){ return "Bird" }
 }

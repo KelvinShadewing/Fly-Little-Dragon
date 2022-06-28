@@ -74,13 +74,17 @@ const predMiss = 3
 		} //End foreach
 
 		//If no player was found, search for birds
-		if(target == -1) foreach(i in actor)
-		{
-			if(typeof i == "Bird")
+		if(target == -1) {
+			foreach(i in actor)
 			{
-				target = i;
-				break;
+				if(typeof i == "Bird")
+				{
+					target = i;
+					break;
+				}
 			}
+
+			gvDifficulty = 8
 		}
 
 		//Move after target
@@ -93,18 +97,32 @@ const predMiss = 3
 				if(target.y < y) yspeed -= 0.15
 				if(target.y > y) yspeed += 0.15
 			}
-			xspeed += 0.005
+			xspeed += 0.005 + (0.005 * gvDifficulty)
 
-			if(xspeed > 0.05 && x < target.x && distance2(x, y, target.x, target.y) > 64) xspeed -= 0.05
+			if(xspeed > (0.05 + (0.05 * gvDifficulty)) && x < target.x && distance2(x, y, target.x, target.y) > 64) xspeed -= 0.05
 
-			if(distance2(x - 8, y, target.x, target.y) <= 10 && anim == idle) {
+			if(distance2(x, y, target.x, target.y) <= 14 && anim == idle) {
 				anim = bite
 				fHead = anim[0]
-				target.xspd = -1
+				if(target.blink == 0) {
+					if(target.id != id) deleteActor(target.id)
+					didcatch = true
+				}
+				else didcatch = false
 			}
 		} else {
 			if(xspeed < 1 && x < 200) xspeed += 0.02
 			xspeed -= 0.01
+		}
+
+		foreach(i in actor) {
+			if(distance2(x, y, i.x, i.y) <= 24 && anim == idle && typeof i == "Bird") {
+				anim = bite
+				fHead = anim[0]
+				if(i.id != id) deleteActor(i.id)
+				didcatch = true
+				xspeed = -0.5
+			}
 		}
 
 		//Limits
@@ -140,11 +158,11 @@ const predMiss = 3
 				break
 
 			case bite:
-				if(distance2(x - 8, y, target.x, target.y) < 16) {
+				if(didcatch) {
 					anim = gulp
-					deleteActor(target.id)
 				}
 				else anim = miss
+
 				fHead = anim[0]
 				break
 
@@ -165,5 +183,7 @@ const predMiss = 3
 			if(target != -1) drawCircle(actor[target].x, actor[target].y, 32, false)
 		}
 	} //End step()
+
+	function _typeof() { return "Predator" }
 
 } //End Predator

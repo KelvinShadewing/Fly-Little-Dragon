@@ -11,13 +11,14 @@
 ::gvScore1 <- 0
 ::gvDual <- 0
 ::gvOverTimer <- 120
+::gvDifficulty <- 0.0
 
 //Character tables
 //Predator legend: head, body, wings, bodytype
 
 ::config <- {
 	safe = 0,
-	difficulty = 0,
+	difficulty = 0.0,
 	con0 = {
 		up = k_up,
 		down = k_down,

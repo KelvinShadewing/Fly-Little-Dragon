@@ -66,8 +66,8 @@
 			break
 		case 2:
 			if(sprPred.rawin(gvCharSelArray[cursor])) {
-				drawSprite(sprPred[gvCharSelArray[cursor]].head, getFrames() / 6, screenW() / 2, screenH() / 2)
 				drawSprite(sprPred[gvCharSelArray[cursor]].body, getFrames() / 6, screenW() / 2, screenH() / 2)
+				drawSprite(sprPred[gvCharSelArray[cursor]].head, getFrames() / 6, screenW() / 2, screenH() / 2)
 				drawSprite(sprPred[gvCharSelArray[cursor]].wing, getFrames() / 6, screenW() / 2, screenH() / 2)
 				drawText(font, (screenW() / 2) - (gvCharSelArray[cursor].len() * 4), 32, gvCharSelArray[cursor])
 			}

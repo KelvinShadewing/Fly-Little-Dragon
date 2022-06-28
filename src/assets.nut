@@ -29,6 +29,8 @@ print("Loaded sndGulp.")
 ::fontG <- newFont(sprFontG, 33, 0, true, -4)
 ::sprCereal <- newSprite("res/rings.png", 16, 16, 1, 1, 8, 8)
 
+::sprWarning <- newSprite("res/warning.png", 32, 32, 0, 0, 16, 16)
+
 ::sprPrey <- {
 	"Hida" : {
 		fly = newSprite("res/HidaFly.png", 63, 31, 1, 1, 32, 20),
@@ -57,6 +59,10 @@ print("Loaded sndGulp.")
 		}
 	}
 }
+
+//Enemies
+::sprBluejay <- newSprite("res/bluejay.png", 39, 36, 0, 0, 21, 18)
+::sprRobin <- newSprite("res/robin.png", 45, 40, 0, 0, 23, 20)
 
 //Background
 ::bg0 <- newSprite("res/background0.png", 160, 240, 0, 0, 0, 0)

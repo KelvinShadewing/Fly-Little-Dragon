@@ -116,7 +116,7 @@ const menuY = 40
 ::meMain <- [
 	{
 		name = function(){ return "Singleplayer" },
-		func = function(){ gvPlayers = 1; gvDual = 0; startPlay(0) }
+		func = function(){ gvPlayers = 1; gvDual = 0; gvDifficulty = config.difficulty; startPlay(0) }
 	},
 	{
 		name = function(){ return "Multiplayer" },
@@ -158,14 +158,14 @@ const menuY = 40
 ::meDifficulty <- [
 	{
 		name = function(){ return "Easy" },
-		func = function(){ config.difficulty = 0; cursor = 0; menu = meOptions }
+		func = function(){ config.difficulty = 0.0; cursor = 0; menu = meOptions }
 	},
 	{
 		name = function(){ return "Normal" },
-		func = function(){ config.difficulty = 1; cursor = 0; menu = meOptions }
+		func = function(){ config.difficulty = 1.0; cursor = 0; menu = meOptions }
 	},
 	{
 		name = function(){ return "Hard" },
-		func = function(){ config.difficulty = 2; cursor = 0; menu = meOptions }
+		func = function(){ config.difficulty = 2.0; cursor = 0; menu = meOptions }
 	}
 ]

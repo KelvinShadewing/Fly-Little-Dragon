@@ -1,4 +1,6 @@
 ::cerealTimer <- 30
+::birdTimer <- 300
+::birdY <- 10 + randInt(220)
 
 ::gmPlay <- function() {
 	drawBackground()
@@ -8,6 +10,26 @@
 		newActor(Cereal, 432, randInt(240))
 		cerealTimer = 60 + randInt(30)
 	}
+
+	if(birdTimer > 0) {
+		if(birdTimer <= 60 && (birdTimer / 5) % 2 == 0) drawSprite(sprWarning, 0, 408, birdY)
+		birdTimer--
+	}
+	else {
+		local birdType = randInt(2)
+		switch(birdType) {
+			case 0:
+				newActor(Robin, 432, birdY)
+				break
+			case 1:
+				newActor(Bluejay, 432, birdY)
+				break
+		}
+		birdY = 10 + randInt(220)
+		birdTimer = 30 + randInt(300)
+	}
+
+	if(gvDifficulty < 4) gvDifficulty += 0.01 / 60.0
 
 	runActors()
 
